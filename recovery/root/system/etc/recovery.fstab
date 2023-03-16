@@ -43,7 +43,7 @@ odm						/odm		ext4	ro,barrier=1			wait,logical,first_stage_mount
 /dev/block/bootdevice/by-name/boot		/boot		emmc	defaults			recoveryonly
 /dev/block/bootdevice/by-name/recovery		/recovery	emmc	defaults			recoveryonly
 /dev/block/bootdevice/by-name/metadata		/metadata	ext4	defaults			wait,first_stage_mount
-/dev/block/bootdevice/by-name/userdata		/data		f2fs	defaults			wait,encryptable=footer,length=-16384
+/dev/block/bootdevice/by-name/userdata		/data		f2fs	noatime,nosuid,nodev,discard,usrquota,grpquota,fsync_mode=nobarrier,reserve_root=32768,resgid=5678,inlinecrypt	latemount,wait,check,,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,quota,reservedsize=128M,sysfs_path=/sys/devices/platform/soc/1d84000.ufshc,checkpoint=fs,keydirectory=/metadata/vold/metadata_encryption
 /dev/block/bootdevice/by-name/cache		/cache		ext4	defaults			recoveryonly
 #/dev/block/mmcblk0p1				/sdcard		vfat	defaults			recoveryonly
 /dev/block/bootdevice/by-name/efs		/efs		ext4	defaults			recoveryonly
@@ -68,4 +68,4 @@ odm						/odm		ext4	ro,barrier=1			wait,logical,first_stage_mount
 /dev/block/bootdevice/by-name/optics		/optics		ext4	defaults			recoveryonly
 /dev/block/bootdevice/by-name/vbmeta_system	/vbmeta_system	emmc	default				recoveryonly
 /dev/block/bootdevice/by-name/vendor_boot	/vendor_boot	emmc	default				recoveryonly
-/dev/block/bootdevice/by-name/vbmeta_samsung	/vbmeta_samsung	emmc	default				recoveryonly
+#/dev/block/bootdevice/by-name/vbmeta_samsung	/vbmeta_samsung	emmc	default				recoveryonly

@@ -1,13 +1,11 @@
-## Recovery Device Tree for the Samsung Galaxy S21 5G FE (Snapdragon)
+## Recovery Device Tree for the Samsung Galaxy Z Flip3 5G (Snapdragon)
 
 ## How-to compile it:
 
 ```sh
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
-lunch twrp_r9q-eng
+lunch twrp_b2q-eng
 make recoveryimage
 ```
 
-Kernel source:
-https://github.com/mohammad92/android_kernel_samsung_r9q
